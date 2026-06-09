@@ -1,9 +1,9 @@
 :root {
   color-scheme: light;
   --bg: #f3f5f7;
-  --panel: #ffffff;
+  --panel: rgba(255, 255, 255, 0.88);
   --text: #17212b;
-  --muted: #5c6773;
+  --muted: #5b6672;
   --border: #d9e0e7;
   --accent: #214f66;
   --accent-strong: #163848;
@@ -26,6 +26,7 @@ body {
   background:
     radial-gradient(circle at top, rgba(33, 79, 102, 0.08), transparent 42%),
     linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+  min-height: 100vh;
 }
 
 a {
@@ -64,13 +65,14 @@ a:hover {
   padding: 1.25rem 0 0.5rem;
   color: var(--muted);
   flex-wrap: wrap;
+  font-size: 0.95rem;
 }
 
 .brand {
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 .site-nav {
@@ -80,7 +82,7 @@ a:hover {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.84);
+  background: var(--panel);
   border: 1px solid rgba(217, 224, 231, 0.9);
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -102,6 +104,7 @@ a:hover {
 
 h1,
 h2,
+h3,
 p {
   margin-top: 0;
 }
@@ -112,10 +115,32 @@ h1 {
   margin-bottom: 1rem;
 }
 
+h2 {
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin-bottom: 0.55rem;
+}
+
 .lead {
   font-size: 1.07rem;
   color: var(--muted);
   max-width: 62ch;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.section-lead {
+  color: var(--muted);
+  max-width: 68ch;
+  margin-bottom: 0;
 }
 
 .hero-links {
@@ -123,6 +148,14 @@ h1 {
   gap: 0.85rem;
   flex-wrap: wrap;
   margin-top: 1.5rem;
+}
+
+.vault-note {
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(217, 224, 231, 0.9);
+  color: var(--muted);
+  font-size: 0.98rem;
 }
 
 .button {
@@ -153,14 +186,17 @@ h1 {
   background: rgba(255, 255, 255, 0.75);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+.feature-section {
   margin-top: 1rem;
 }
 
-.grid .card,
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.feature-card,
 .page-content {
   padding: 1.25rem;
 }
@@ -170,12 +206,32 @@ h1 {
 }
 
 .page-content h2 {
-  margin-top: 1.4rem;
-  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.page-content p:last-child {
+  margin-bottom: 0;
 }
 
 .muted {
   color: var(--muted);
+}
+
+.android-first {
+  margin-top: 1rem;
+  padding: 1.25rem;
+}
+
+.android-first p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li + li {
+  margin-top: 0.35rem;
 }
 
 @media (max-width: 800px) {
@@ -185,7 +241,7 @@ h1 {
     flex-direction: column;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .page-shell {
+    width: min(1100px, calc(100% - 1.25rem));
   }
 }
