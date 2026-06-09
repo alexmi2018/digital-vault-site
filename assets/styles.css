@@ -205,6 +205,10 @@ h3 {
   margin-top: 0.5rem;
 }
 
+.page-content a {
+  overflow-wrap: anywhere;
+}
+
 .page-content h2 {
   margin-top: 1.5rem;
 }

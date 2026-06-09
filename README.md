@@ -15,6 +15,7 @@ Then open:
 - `http://localhost:8080/`
 - `http://localhost:8080/privacy/`
 - `http://localhost:8080/support/`
+- `http://localhost:8080/data-deletion/`
 
 No build step is required.
 
@@ -23,6 +24,7 @@ No build step is required.
 - `index.html` - product landing page
 - `privacy/index.html` - privacy policy
 - `support/index.html` - support page
+- `data-deletion/index.html` - data deletion page
 
 ## Notes
 
