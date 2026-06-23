@@ -471,7 +471,17 @@ li + li {
 }
 
 /* Light/Dark Toggle Transitions */
-/* Default (Dark theme): Show Sun, hide Moon */
+/* Default (Dark theme state): Show Sun, hide Moon */
+.theme-toggle-btn .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.theme-toggle-btn .moon-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+/* Explicit Dark theme matching default */
 html[data-theme="dark"] .theme-toggle-btn .sun-icon {
   opacity: 1;
   transform: rotate(0deg) scale(1);
